@@ -44,7 +44,7 @@ To buy tokens:
 ```python
 try:
     result = await sdk.buy({
-        'privateKeys': 'your_private_keys',
+        'privateKeys': 'PRIVATE_KEY1,PRIVATE_KEY2',
         'tokenAddress': 'token_address',
         'amount': 'amount_to_buy',
     })
@@ -60,7 +60,7 @@ To sell tokens:
 ```python
 try:
     result = await sdk.sell({
-        'privateKeys': 'your_private_keys',
+        'privateKeys': 'PRIVATE_KEY1,PRIVATE_KEY2',
         'tokenAddress': 'token_address',
         'percentage': 'percentage_to_sell',
     })
@@ -78,7 +78,7 @@ To create a new token:
 ```python
 try:
     result = await sdk.create({
-        'privateKeys': 'your_private_keys',
+        'privateKeys': 'PRIVATE_KEY1,PRIVATE_KEY2',
         'devPrivateKey': 'dev_private_key',
         'amount': 'token_amount',
         'name': 'token_name',
@@ -139,14 +139,14 @@ sdk = PredatorSDK()
 async def main():
     try:
         buy_result = await sdk.buy({
-            'privateKeys': os.getenv('PRIVATE_KEYS'),
+            'privateKeys': os.getenv('PRIVATE_KEY1,PRIVATE_KEY2'),
             'tokenAddress': os.getenv('TOKEN_ADDRESS'),
             'amount': os.getenv('BUY_AMOUNT'),
         })
         print('Buy successful:', buy_result)
 
         sell_result = await sdk.sell({
-            'privateKeys': os.getenv('PRIVATE_KEYS'),
+            'privateKeys': os.getenv('PRIVATE_KEY1,PRIVATE_KEY2'),
             'tokenAddress': os.getenv('TOKEN_ADDRESS'),
             'percentage': os.getenv('SELL_PERCENTAGE'),
         })
